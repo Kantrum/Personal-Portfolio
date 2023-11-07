@@ -25,7 +25,7 @@ Sacramento, California, USA
 About
 Resume
 Portfolio
-Blog
+Photography Blog
 Contact
 
 # about
@@ -185,7 +185,7 @@ Web development
 
 
 
-# blog
+# photography
 
 Blog
 
