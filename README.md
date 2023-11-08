@@ -1,10 +1,12 @@
-# vCard Pro - Personal portfolio
+# vCard Pro - Personal Portfolio
 
-**This is an enhanced version that adds Gallery View and Enlarged Photo View.**
+**This is an enhanced version that adds Gallery View and Enlarged Photo View, and greatly refactored the code to be more efficient**
 
 Original Intro:
 
 vCard is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
+
+<br />
 
 ## New Feature
 
