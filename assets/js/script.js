@@ -538,28 +538,48 @@ popupContainer.addEventListener("click", (event) => {
   }
 });
 
+const container = document.getElementById("image-list-container");
+const enlargeContainer = document.getElementById("enlarge-container");
+const enlargeOverlay = document.getElementById("enlarge-overlay");
+const modal = document.getElementById("enlarge-modal");
+const modalImage = document.getElementById("enlarge-image");
+const closeBtn = document.getElementById("enlarge-close");
+
+// Function to open the modal and display the clicked image
+function openModal(imageSrc) {
+  enlargeContainer.classList.toggle("active");
+  enlargeOverlay.classList.toggle("active");
+  modalImage.src = imageSrc;
+}
+
+// Function to close the modal
+function closeModal() {
+  enlargeContainer.classList.toggle("active");
+  enlargeOverlay.classList.toggle("active");
+}
+
+
+// Event listener for opening the modal when an image is clicked
+container.addEventListener("click", (e) => {
+  if (e.target.tagName === "IMG") {
+    openModal(e.target.src);
+  }
+});
+
+// Event listener for closing the modal when the close button is clicked
+closeBtn.addEventListener("click", closeModal);
+
+// Event listener for closing the modal when clicking outside the modal content
+window.addEventListener("click", (e) => {
+  if (e.target === modal) {
+    closeModal();
+  }
+});
+
 
 async function loadImagesForTitle(title) {
   const folderName = folderMapping[title];
-  const container = document.getElementById("image-list-container");
-  const enlargeContainer = document.getElementById("enlarge-container");
-  const enlargeOverlay = document.getElementById("enlarge-overlay");
-  const modal = document.getElementById("enlarge-modal");
-  const modalImage = document.getElementById("enlarge-image");
-  const closeBtn = document.getElementById("enlarge-close");
-
-  // Function to open the modal and display the clicked image
-  function openModal(imageSrc) {
-    enlargeContainer.classList.toggle("active");
-    enlargeOverlay.classList.toggle("active");
-    modalImage.src = imageSrc;
-  }
-
-  // Function to close the modal
-  function closeModal() {
-    enlargeContainer.classList.toggle("active");
-    enlargeOverlay.classList.toggle("active");
-  }
+  
 
   if (!folderName) {
     console.error("Folder mapping not found for title: " + title);
@@ -579,23 +599,6 @@ async function loadImagesForTitle(title) {
       img.src = `./assets/images/photos/${folderName}/${imageUrl}`;
       container.appendChild(img);
     }
-
-    // Event listener for opening the modal when an image is clicked
-    container.addEventListener("click", (e) => {
-      if (e.target.tagName === "IMG") {
-        openModal(e.target.src);
-      }
-    });
-
-    // Event listener for closing the modal when the close button is clicked
-    closeBtn.addEventListener("click", closeModal);
-
-    // Event listener for closing the modal when clicking outside the modal content
-    window.addEventListener("click", (e) => {
-      if (e.target === modal) {
-        closeModal();
-      }
-    });
 
   } catch (error) {
     console.error("Error loading images:", error);
