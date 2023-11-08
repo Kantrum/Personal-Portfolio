@@ -75,10 +75,10 @@ for (let i = 0; i < selectItems.length; i++) {
   });
 }
 
-// filter variables
-const filterItems = document.querySelectorAll("[data-filter-item]");
 
 const filterFunc = function (selectedValue) {
+  // filter variables
+  const filterItems = document.querySelectorAll("[data-filter-item]");
 
   for (let i = 0; i < filterItems.length; i++) {
 
@@ -201,10 +201,10 @@ const projectsData = [
     imageSrc: "./assets/images/project-11.jpg",
     link: "https://github.com/0HugoHu/IDS721-Dalle2"
   },
-  // Add more project data objects as needed
 ];
 
 const projectList = document.getElementById("project-list");
+
 
 // Iterate through the project data and generate list items
 projectsData.forEach((project) => {
@@ -579,7 +579,7 @@ window.addEventListener("click", (e) => {
 
 async function loadImagesForTitle(title) {
   const folderName = folderMapping[title];
-  
+
 
   if (!folderName) {
     console.error("Folder mapping not found for title: " + title);
