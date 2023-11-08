@@ -115,6 +115,122 @@ for (let i = 0; i < filterBtn.length; i++) {
 
 
 
+// Sample project data
+const projectsData = [
+  {
+    category: "Android App",
+    title: "Harry Potter™ Strategy Game",
+    imageSrc: "./assets/images/project-1.jpg",
+    link: "https://github.com/0HugoHu/Harry-Potter-Strategy-Game"
+  },
+  {
+    category: "Web App",
+    title: "Mini Uber",
+    imageSrc: "./assets/images/project-2.jpg",
+    link: "https://github.com/0HugoHu/Django-Web-App"
+  },
+  {
+    category: "iOS App",
+    title: "Duke People",
+    imageSrc: "./assets/images/project-14.jpg",
+    link: "https://github.com/0HugoHu/ECE564-HW6"
+  },
+  {
+    category: "Web App",
+    title: "Carbon Credit Mall (2020)",
+    imageSrc: "./assets/images/project-12.jpg",
+    link: "https://github.com/0HugoHu/CarbonCredits-MetroTravel"
+  },
+  {
+    category: "Web App",
+    title: "Mini TikTok Server",
+    imageSrc: "./assets/images/project-13.jpg",
+    link: "https://github.com/0HugoHu/StandAloneTikTok"
+  },
+  {
+    category: "Android App",
+    title: "Fragment Time Utilization and Collection Management (2019)",
+    imageSrc: "./assets/images/project-4.jpg",
+    link: "https://github.com/0HugoHu/MoDengXian"
+  },
+  {
+    category: "Others",
+    title: "Circuit Simulation on Windows (2019)",
+    imageSrc: "./assets/images/project-5.jpg",
+    link: "https://github.com/0HugoHu/ELEC2645-Circuit-Simulation"
+  },
+  {
+    category: "Embedded System",
+    title: "Advanced Calculator (2021)",
+    imageSrc: "./assets/images/project-6.jpg",
+    link: "https://github.com/0HugoHu/ELEC3662-Advanced-Calculator"
+  },
+  {
+    category: "Android App",
+    title: "Finger Storm Game (2015)",
+    imageSrc: "./assets/images/project-7.jpg",
+    link: "https://github.com/0HugoHu/FingerStorm"
+  },
+  {
+    category: "Android App",
+    title: "Parking Robot based on 3D LiDAR",
+    imageSrc: "./assets/images/project-3.jpg",
+    link: "https://github.com/0HugoHu/ELEC3875-Final-Project"
+  },
+  {
+    category: "Android App",
+    title: "Shude Focus Forum (2016)",
+    imageSrc: "./assets/images/project-8.jpg",
+    link: "https://github.com/0HugoHu/SDFocus"
+  },
+  {
+    category: "Embedded System",
+    title: "Brave Heart Game (2020)",
+    imageSrc: "./assets/images/project-9.jpg",
+    link: "https://github.com/0HugoHu/ELEC2645-EmbeddedSystem-BraveHeart"
+  },
+  {
+    category: "Web App",
+    title: "Seat Reservation (2019)",
+    imageSrc: "./assets/images/project-10.jpg",
+    link: "https://github.com/0HugoHu/SeatReservation"
+  },
+  {
+    category: "Web App",
+    title: "AI Powered Picture Generator",
+    imageSrc: "./assets/images/project-11.jpg",
+    link: "https://github.com/0HugoHu/IDS721-Dalle2"
+  },
+  // Add more project data objects as needed
+];
+
+const projectList = document.getElementById("project-list");
+
+// Iterate through the project data and generate list items
+projectsData.forEach((project) => {
+  const listItem = document.createElement("li");
+  listItem.className = "project-item active";
+  listItem.setAttribute("data-filter-item", "");
+  listItem.setAttribute("data-category", project.category.toLowerCase());
+
+  listItem.innerHTML = `
+      <a href="${project.link}" target="_blank">
+          <figure class="project-img">
+              <div class="project-item-icon-box">
+                  <ion-icon name="eye-outline"></ion-icon>
+              </div>
+              <img src="${project.imageSrc}" alt="${project.category}" loading="lazy">
+          </figure>
+          <h3 class="project-title">${project.title}</h3>
+          <p class="project-category">${project.category}</p>
+      </a>
+  `;
+
+  projectList.appendChild(listItem);
+});
+
+
+
 // contact form variables
 const form = document.querySelector("[data-form]");
 const formInputs = document.querySelectorAll("[data-form-input]");
@@ -133,7 +249,6 @@ for (let i = 0; i < formInputs.length; i++) {
 
   });
 }
-
 
 
 // page navigation variables
@@ -159,15 +274,14 @@ for (let i = 0; i < navigationLinks.length; i++) {
 }
 
 
-
 const data = [
   {
-      src: "./assets/images/photos/Great Smoky Mountain/DSCF8748.jpg",
-      alt: "Great Smoky Mountain",
-      category: "Travel",
-      date: "Oct 22, 2023",
-      title: "Great Smoky Mountain",
-      text: "The name \"Smoky\" comes from the natural fog that often hangs over the range and presents as large smoke plumes from a distance."
+    src: "./assets/images/photos/Great Smoky Mountain/DSCF8748.jpg",
+    alt: "Great Smoky Mountain",
+    category: "Travel",
+    date: "Oct 22, 2023",
+    title: "Great Smoky Mountain",
+    text: "The name \"Smoky\" comes from the natural fog that often hangs over the range and presents as large smoke plumes from a distance."
   },
   {
     src: "./assets/images/photos/Atlanta Others/Atlanta-MICS-23-10-16-781.jpg",
@@ -186,12 +300,12 @@ const data = [
     text: "Wild Animal Safari is a drive through animal park. The park is home to more than 550 animals representing 75 species."
   },
   {
-      src: "./assets/images/photos/Atlanta Jellyfish/Atlanta-MICS-23-10-14-410.jpg",
-      alt: "Georgia Aquarium",
-      category: "Travel",
-      date: "Oct 14, 2023",
-      title: "Georgia Aquarium",
-      text: "The Georgia Aquarium houses more than a hundred thousand animals, all of which reside in 10 million US gallons of marine and salt water."
+    src: "./assets/images/photos/Atlanta Jellyfish/Atlanta-MICS-23-10-14-410.jpg",
+    alt: "Georgia Aquarium",
+    category: "Travel",
+    date: "Oct 14, 2023",
+    title: "Georgia Aquarium",
+    text: "The Georgia Aquarium houses more than a hundred thousand animals, all of which reside in 10 million US gallons of marine and salt water."
   },
   {
     src: "./assets/images/photos/ECE Retreat/DJI_0811.JPG",
@@ -321,11 +435,68 @@ const data = [
     title: "Duke Fall 2022",
     text: "The first fall at Duke University. As the maple leaves turn red, the chapel view becomes more beautiful."
   }
-  
+
 ];
+
+
+const folderMapping = {
+  "Duke Fall 2022": "Duke",
+  "Halloween 2022": "Halloween",
+  "The Metropolitan Museum of Art": "The MET",
+  "Madame Tussauds New York": "Madame Tussauds",
+  "American Museum of Natural History": "American Museum of Natural History",
+  "Times Square": "Times Square",
+  "Hamilton (2020) - Musical": "Orchestra",
+  "Empire State Building": "Empire State Building",
+  "Brooklyn Bridge": "Brooklyn Bridge",
+  "Independence Day": "Independent Day",
+  "Intrepid Sea, Air and Space Museum": "Intrepid Museum",
+  "The Street View of New York": "New York Street",
+  "The Skylines of New York": "New York Skyview",
+  "Eno River Farm": "Eno River Farm",
+  "Jordan Lake": "Jordan Lake",
+  "ECE Department Retreat": "ECE Retreat",
+  "Georgia Aquarium": "Atlanta Jellyfish",
+  "Wild Animal Safari - Pine Mountain": "Atlanta Animals",
+  "Travel to Georgia and Tennessee": "Atlanta Others",
+  "Great Smoky Mountain": "Great Smoky Mountain"
+};
 
 // Get the ul element where the list items will be added
 const ul = document.getElementById("photography-list");
+
+// Get the pop-up elements
+const popupContainer = document.getElementById("popup-container");
+const popupOverlay = document.getElementById("popup-overlay");
+const popupContent = document.getElementById("popup-content");
+const popupClose = document.getElementById("popup-close");
+const popupTitle = document.getElementById("popup-title");
+const popupCategory = document.getElementById("popup-category");
+const popupDate = document.getElementById("popup-date");
+const popupText = document.getElementById("popup-text");
+const popupImages = document.getElementById("popup-images");
+
+
+// Function to open the pop-up with data
+function openPopup(item) {
+  popupTitle.textContent = item.title;
+  popupCategory.textContent = item.category;
+  popupDate.textContent = item.date;
+  popupText.textContent = item.text;
+
+  // Load images for the current title
+  loadImagesForTitle(item.title);
+
+  popupContainer.classList.toggle("active");
+  popupOverlay.classList.toggle("active");
+}
+
+// Function to close the pop-up
+function closePopup() {
+  popupContainer.classList.toggle("active");
+  popupOverlay.classList.toggle("active");
+}
+
 
 // Loop through the data and generate list items
 data.forEach(item => {
@@ -349,5 +520,85 @@ data.forEach(item => {
       </a>
   `;
 
+  li.addEventListener("click", () => {
+    openPopup(item);
+  });
+
   ul.appendChild(li);
 });
+
+
+// Close pop-up when the close button is clicked
+popupClose.addEventListener("click", closePopup);
+
+// Close pop-up when clicking outside the content area
+popupContainer.addEventListener("click", (event) => {
+  if (event.target === popupContainer) {
+    closePopup();
+  }
+});
+
+
+async function loadImagesForTitle(title) {
+  const folderName = folderMapping[title];
+  const container = document.getElementById("image-list-container");
+  const enlargeContainer = document.getElementById("enlarge-container");
+  const enlargeOverlay = document.getElementById("enlarge-overlay");
+  const modal = document.getElementById("enlarge-modal");
+  const modalImage = document.getElementById("enlarge-image");
+  const closeBtn = document.getElementById("enlarge-close");
+
+  // Function to open the modal and display the clicked image
+  function openModal(imageSrc) {
+    enlargeContainer.classList.toggle("active");
+    enlargeOverlay.classList.toggle("active");
+    modalImage.src = imageSrc;
+  }
+
+  // Function to close the modal
+  function closeModal() {
+    enlargeContainer.classList.toggle("active");
+    enlargeOverlay.classList.toggle("active");
+  }
+
+  if (!folderName) {
+    console.error("Folder mapping not found for title: " + title);
+    return;
+  }
+
+  // Clear existing images
+  container.innerHTML = "";
+
+  try {
+    const response = await fetch(`./assets/images/photos/${folderName}/images.json`);
+    const imageUrls = await response.json();
+
+    // Load images from the folder
+    for (const imageUrl of imageUrls) {
+      const img = document.createElement("img");
+      img.src = `./assets/images/photos/${folderName}/${imageUrl}`;
+      container.appendChild(img);
+    }
+
+    // Event listener for opening the modal when an image is clicked
+    container.addEventListener("click", (e) => {
+      if (e.target.tagName === "IMG") {
+        openModal(e.target.src);
+      }
+    });
+
+    // Event listener for closing the modal when the close button is clicked
+    closeBtn.addEventListener("click", closeModal);
+
+    // Event listener for closing the modal when clicking outside the modal content
+    window.addEventListener("click", (e) => {
+      if (e.target === modal) {
+        closeModal();
+      }
+    });
+
+  } catch (error) {
+    console.error("Error loading images:", error);
+  }
+}
+
