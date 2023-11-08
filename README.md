@@ -1,10 +1,12 @@
 # vCard Pro - Personal Portfolio
 
-**This is an enhanced version that adds Gallery View and Enlarged Photo View, and greatly refactored the code to be more efficient**
+**This is an enhanced version that adds Gallery View and Enlarged Photo View, and greatly refactored the code to be more efficient.**
+
+**My website is deployed on [AWS Amplify](https://aws.amazon.com/amplify/).**
 
 Original Intro:
 
-vCard is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript.
+vCard is a fully responsive personal portfolio website, responsive for all devices, built using HTML, CSS, and JavaScript. It supports both PC and mobile devices.
 
 <br />
 
